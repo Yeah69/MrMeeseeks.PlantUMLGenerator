@@ -1,0 +1,32 @@
+name: OnVersionTag
+
+on:
+  push:
+    tags:
+      - '*'
+jobs:
+  windows:
+    
+    strategy:
+      matrix:
+        configuration: [ Release ]
+    runs-on: windows-latest
+      
+    steps:
+    - uses: actions/checkout@main
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@main
+      with:
+        dotnet-version: 5.0.x
+    - run: set DOTNET_CLI_TELEMETRY_OPTOUT=1
+    - name: Install dependencies
+      run: dotnet restore .\MrMeeseeks.PlantUML.sln
+    - name: Build
+      run: dotnet build .\MrMeeseeks.PlantUML.sln --configuration Release --no-restore
+    - name: Publish to NuGet
+      uses: brandedoutcast/publish-nuget@v2.5.5
+      with:
+        PROJECT_FILE_PATH: Main/Main.csproj
+        VERSION_FILE_PATH: Directory.Build.props
+        TAG_COMMIT: false
+        NUGET_KEY: ${{secrets.NUGET_API_KEY}}

@@ -1,0 +1,18 @@
+@startuml
+!theme cyborg-outline
+class MrMeeseeks.ResXToViewModelGenerator.SampleWpfApp.MainWindow {
++void .ctor()
++System.String Both <font color=darkred><==</font> <font color=darkgreen>==></font>
++System.String Get <font color=darkgreen>==></font>
++System.String Set <font color=darkred><==</font>
+~MrMeeseeks.ResXToViewModelGenerator.SampleWpfApp.MainWindow This
+~System.Windows.Controls.TextBlock Test
++void InitializeComponent()
+}
+class MrMeeseeks.ResXToViewModelGenerator.SampleWpfApp.App {
++void InitializeComponent()
++void Main()
++void .ctor()
+}
+
+@enduml
