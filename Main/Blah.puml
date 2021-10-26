@@ -1,15 +1,32 @@
 @startuml
 !theme cyborg-outline
-class MrMeeseeks.ResXToViewModelGenerator.SampleWpfApp.MainWindow {
+enum MrMeeseeks.PlantUMLGenerator.SampleWpfApp.Asdf {
+Gdfg
+Asdf
+Fgsdg
+}
+interface MrMeeseeks.PlantUMLGenerator.SampleWpfApp.IB {
+}
+interface MrMeeseeks.PlantUMLGenerator.SampleWpfApp.IB implements MrMeeseeks.PlantUMLGenerator.SampleWpfApp.IA
+interface MrMeeseeks.PlantUMLGenerator.SampleWpfApp.IA {
+}
+class MrMeeseeks.PlantUMLGenerator.SampleWpfApp.A {
++void .ctor()
+}
+class MrMeeseeks.PlantUMLGenerator.SampleWpfApp.A implements MrMeeseeks.PlantUMLGenerator.SampleWpfApp.IA
+class MrMeeseeks.PlantUMLGenerator.SampleWpfApp.B {
++void .ctor()
+}
+class MrMeeseeks.PlantUMLGenerator.SampleWpfApp.B extends MrMeeseeks.PlantUMLGenerator.SampleWpfApp.A
+class MrMeeseeks.PlantUMLGenerator.SampleWpfApp.B implements MrMeeseeks.PlantUMLGenerator.SampleWpfApp.IB
+class MrMeeseeks.PlantUMLGenerator.SampleWpfApp.MainWindow {
 +void .ctor()
 +System.String Both <font color=darkred><==</font> <font color=darkgreen>==></font>
 +System.String Get <font color=darkgreen>==></font>
 +System.String Set <font color=darkred><==</font>
-~MrMeeseeks.ResXToViewModelGenerator.SampleWpfApp.MainWindow This
-~System.Windows.Controls.TextBlock Test
 +void InitializeComponent()
 }
-class MrMeeseeks.ResXToViewModelGenerator.SampleWpfApp.App {
+class MrMeeseeks.PlantUMLGenerator.SampleWpfApp.App {
 +void InitializeComponent()
 +void Main()
 +void .ctor()

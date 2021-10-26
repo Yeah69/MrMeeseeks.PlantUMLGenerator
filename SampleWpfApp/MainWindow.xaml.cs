@@ -1,5 +1,11 @@
-﻿namespace MrMeeseeks.ResXToViewModelGenerator.SampleWpfApp
+﻿namespace MrMeeseeks.PlantUMLGenerator.SampleWpfApp
 {
+    public interface IB : IA {}
+    public interface IA {}
+    public class A : IA {}
+    
+    public class B : A, IB {}
+
     public partial class MainWindow
     {
         public MainWindow()
